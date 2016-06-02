@@ -1,0 +1,28 @@
+<div id="top-bzns">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<uib-tabset type="pills" vertical="true">
+					<uib-tab ng-repeat="c in categories" ng-click="changeCategory(c.id)" active="currentCtg==c.id" heading="{{c.name}}"></uib-tab>
+				</uib-tabset>
+			</div>
+			<div class="col-md-10">
+				<p ng-show="panelData.length==0">Nothing to display.</p>
+				<uib-accordion close-others="true">
+					<uib-accordion-group panel-class="bzns-panel" ng-repeat="b in panelData">
+				    	<uib-accordion-heading>
+				    	  <img src="{{b.profileImg}}" class="bzns-profile img-circle">
+					      <h3>{{b.name}} <small>{{b.address}} {{b.city}}</small></h3>
+					      <img class="pull-left stars" src="assets/img/dummy/stars.png">
+					      <span>{{b.avgRating}}/5 <span>{{b.totalReviews | number}} Reviews</span></span>
+					      <p>
+					      	{{b.description}}
+					      </p>
+				    	</uib-accordion-heading>
+				    	Comments Here...
+				    </uib-accordion-group>
+				</uib-accordion>
+			</div>
+		</div>
+	</div>
+</div>

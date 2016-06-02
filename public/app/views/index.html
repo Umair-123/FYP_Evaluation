@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<base href='/'>
+	<title>Br |HOME</title>
+  <link rel="icon" 
+      type="image/png" 
+      href="app/views/assets/img/favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/views/assets/libs/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/views/assets/libs/css/star-rating.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="app/views/assets/css/style.css">	
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-route.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+
+	<!-- Services -->
+	
+  <script type="text/javascript" src="app/services/authService.js"></script>
+	<script type="text/javascript" src="app/services/userService.js"></script>
+	<script type="text/javascript" src="app/services/storyService.js"></script>
+	<script type="text/javascript" src="app/services/businessService.js"></script>
+  <script type="text/javascript" src="app/services/postService.js"></script>
+
+
+  <!-- Controllers -->
+	<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/businessCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/postCtrl.js"></script>
+  <!-- Directives -->
+	<script type="text/javascript" src="app/directives/reverse.js"></script>
+
+	<script type="text/javascript" src="app/app.routes.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+
+
+	<script type="text/javascript" src="app/views/assets/libs/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="app/views/assets/libs/js/jquery-2.1.4.min.js"></script>
+
+	<script type="text/javascript" src="app/views/assets/libs/js/angular.min.js"></script>
+	<script type="text/javascript" src="app/views/assets/libs/js/angular-route.min.js"></script>
+
+	<script type="text/javascript" src="app/views/assets/libs/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="app/views/assets/libs/js/star-rating.min.js"></script>
+  <script type="text/javascript" src="app/views/assets/libs/js/star-rating.js"></script>
+	<script type="text/javascript" src="app/views/assets/js/script.js"></script>
+	<script type="text/javascript" src="app/views/assets/js/mainJS.js"></script>
+
+</head>
+<body ng-controller="MainController as main">
+
+<!--<header>
+	<div class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-book"></span>User Story</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li><a href="/users"></a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+				<li ng-if="!main.loggedIn"><a href="/signup">Signup</a></li>
+				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username }}</a></li>
+				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+</header>
+-->
+<!--Apna Scene-->
+	<!-- NAV BAR -->
+	<nav class="navbar navbar-inverse" style="margin-top: 0px;">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="/">Business Reviewer</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="SearchBusinessesController as business">
+	      <form class="navbar-form navbar-right" role="search" ng-submit="business.searchBusinesses()">
+	      	<button type="submit" class="btn btn-find">Find</button>
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search Business" ng-model="business.businessData.bizName">
+	        </div>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+	      		<button ng-if="!main.loggedIn" type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+				<button ng-if="!main.loggedIn" type="button" class="btn btn-default btn-lg" id="SignupBtn">Sign Up</button>
+				<li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username }}</a></li>
+        <li ng-if="main.loggedIn"><a href="/profile">DashBoard</a></li>
+				<button ng-if="main.loggedIn" type="button" class="btn btn-default btn-lg" id="registerBtn">Register a Business</button>
+				<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+			</ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<!-- / NAV BAR -->
+
+
+<div>
+
+	<div ng-view></div>
+</div>
+
+
+
+
+<!-- Modal For Login -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" name="loginForm" ng-submit="main.doLogin()">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email" ng-model="main.loginData.username" required >
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="psw" placeholder="Enter password" ng-model="main.loginData.password" required>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked required>Remember me</label>
+            </div>
+              <button id="loginbtn" type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a id="SignupBtn2">Sign Up</a></p>
+          <p>Forgot <a class="SignupBtn" >Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal For Login Ended -->
+
+
+<!-- Modal For Sign Up -->
+  <div class="modal fade" id="SignupModal" role="dialog" ng-controller="UserCreateController as user">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Sign Up</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" ng-submit="user.signupUser()">
+            <div class="form-group">
+              <label for="firstname"><span class="glyphicon glyphicon-user"></span> First Name</label>
+              <input type="text" class="form-control" id="firstname" placeholder="Enter Your First Name" ng-model="user.userData.firstname" >
+            </div>
+            <div class="form-group">
+              <label for="lastname"><span class="glyphicon glyphicon-user"></span> Last Name</label>
+              <input type="text" class="form-control" id="lastname" placeholder="Enter Your Last Name" ng-model="user.userData.lastname">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Login</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter Your UserName" ng-model="user.userData.username">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password" ng-model="user.userData.password">
+            </div>
+            <div class="form-group">
+              <label for="confirmpsw"><span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+              <input type="text" class="form-control" id="confirmpsw" placeholder="Enter password" ng-model="user.userData.password">
+            </div>
+            
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Sign Up</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+         
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal For SignUp Ended --> 
+<!-- Modal For Register -->
+  <div class="modal fade" id="registerationModal" role="dialog" ng-controller="businessController as business">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <h4><span class="glyphicon glyphicon-lock"></span>Register Your Business Here</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" name="loginForm" ng-submit="business.createBusiness()">
+               
+                <h6>Upload Your Brand Picture</h6>
+                <input id="in" type="file" class="text-center center-block well well-sm">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Name </label>
+              <input type="text" class="form-control" id="name" ng-model="business.businessData.bizName" placeholder="Enter Name" required>
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Description</label>
+              <textarea class="form-control" id="des" ng-model="business.businessData.description" placeholder="Some words about your Business"></textarea>
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Address </label>
+              <input type="text" class="form-control" id="add" ng-model="business.businessData.bizAddress" placeholder="Address" required>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Register</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal For Registration Ended -->
+</body>
+</html>

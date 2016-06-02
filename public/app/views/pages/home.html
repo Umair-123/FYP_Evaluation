@@ -1,0 +1,242 @@
+<!--  For Guest -->
+<!-- Slider -->
+	
+	<div id="bzns-slider" class="carousel slide" data-ride="carousel" >
+	  <!-- Indicators
+	  <ol class="carousel-indicators">
+	    <li data-target="#bzns-slider" data-slide-to="0" class="active"></li>
+	    <li data-target="#bzns-slider" data-slide-to="1"></li>
+	    <li data-target="#bzns-slider" data-slide-to="2"></li>
+	  </ol>
+	  -->
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/kfc-profile-img.png" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>KFC <span>Chowk chuburji Nazd Umer Burger Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      			consequat. Duis aute irure dolor.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/burger-king.jpg" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>Burger King <span>Anarkali bazar Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/shaukat-khanam.jpg" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>Shoukat Khanam Cancer Hospital <span>Raiwind Road Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#bzns-slider" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#bzns-slider" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+	<!-- / Slider -->
+
+
+
+		<!-- Find Business -->
+	<div id="find-bzns-inp" class="row" >
+		<div class="input-group col-md-8 col-md-offset-2">
+	      <input type="text" class="form-control" placeholder="type name of business to find">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button">Find!</button>
+	      </span>
+	    </div><!-- /input-group -->
+	</div>
+	<!-- /Find Business -->
+
+	<!-- Registration area -->
+	<div id="reg-area" >
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div>
+						<h2>Check Out The Business Feeds By Owners</h2>
+						<p>Let People Decide Standards</p>
+						<a class="btn btn-reg" href="/BizFeed" >Check Out</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div>
+						<h2>SHARE YOUR EXPERIENCES</h2>
+						<p>Help People Find The Best</p>
+						<a class="btn btn-reg " href="#bizi">See Local Businesses</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Registration area -->
+	<!-- City Selection -->
+	<div class="city-select" >
+		<select class="form-control">
+			<option selected>Lahore</option>
+			<option>Karachi</option>
+			<option>Islamabad</option>
+			<option>Rawalpindi</option>
+			<option>Multan</option>
+			<option>Murree</option>
+			<option>Faisalabad</option>
+		</select>
+	</div>
+	<!-- /City Selection -->
+
+	<!-- Top Businesses -->
+	<div id="top-bzns"  ng-controller="AllBusinessesController as business" >
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<section>
+						<ul class="nav nav-pills nav-stacked"  id="myTabs">
+						  <li class="active" role="presentation" data-toggle="tab"><a href="#busi1"  >Food</a></li>
+						  <li role="presentation" ><a href="busi2">Real Estate</a></li>
+						  <li role="presentation" ><a href="busi3">Clothes</a></li>
+						  <li role="presentation" ><a href="busi2">Real Estate</a></li>
+						  <li role="presentation" ><a href="busi3">Clothes</a></li>
+						  <li role="presentation" ><a href="busi2">Real Estate</a></li>
+						  <li role="presentation" ><a href="busi3">Clothes</a></li>
+						  <li role="presentation" ><a href="busi2">Real Estate</a></li>
+						  <li role="presentation" ><a href="busi3">Clothes</a></li>
+
+						</ul>
+					</section>
+					
+				</div>
+				<div class="col-md-10"  id="bizi">
+					<div class="panel-group active" id="busi1" role="tablist" aria-multiselectable="true" ng-repeat="each in business.businesses | reverse">
+					  <div class="panel panel-default bzns-panel" >
+					    <div class="panel-heading" role="tab">
+					      <h4 class="panel-title">
+					        <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls="collapseOne">
+					          <img src="app/views/assets/img/dummy/shaukat-khanam.jpg" class="bzns-profile img-circle">
+					          <h3>{{each.bizName}} <small>{{each.bizAddress}}</small></h3>
+					          <img class="pull-left stars" src="app/views/assets/img/dummy/stars.png">
+					          <span>4/5 <span>100,435,909 Reviews</span></span>
+					          <p>
+					          	{{each.description}}
+					          </p>
+					        </a>
+					      </h4>
+					    </div>
+                    <section ng-init="tabo=1" style="margin-left:10px;">
+						<ul class="nav nav-pills">
+							<li ng-class="{active:tabo===1}">
+								<a href ng-click="tabo=1">Description</a>
+							</li>
+							<li ng-class="{active:tabo===2}">
+								<a href ng-click="tabo=2">Address</a>
+							</li>
+							<li ng-class="{active:tabo===3}">
+								<a href ng-click="tabo=3">Reviews</a>
+							</li>
+						</ul>
+						<div class="panel" ng-show="tabo===1">
+							<p>{{each.description}}</p>
+						</div>
+						<div class="panel" ng-show="tabo===2">
+							<p>{{each.bizAddress}}</p>
+						</div>
+						<div class="panel" ng-show="tabo===3"  ng-controller="commentbusinessController as biz">
+							<h2>Submit A Review</h2>
+							<form name="reviewForm" role="form" onload="biz.starfunc()">
+
+									<blockquote>
+									<b>{{reviewCtrl.review.stars}}</b>
+									<p>{{reviewCtrl.review.Comment}}</p>
+									</blockquote>
+								
+									<input ng-model="reviewCtrl.review.stars" id="input-id" type="number" class="rating" min=0 max=5 step=0.1 data-size="lg" >
+									<div class="form-group">
+
+  										<label for="comment">Comment:</label>
+  										<textarea class="form-control" rows="5" id="review.Comment" ng-model="reviewCtrl.review.Comment"></textarea>
+									</div>
+									<div class="form-group"><input type="submit" value="Submit Review" class="btn btn-default btn-lg" onclick="func()"></div> 
+							</form>
+						</div>
+						
+
+
+
+					</section>
+					 
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</div>
+</div>
+</div>
+</div>
+
+	<!-- /Top Businesses -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<!--//Businesses Retreiving Checking-->
+
+
+</br>
+       
+<div class="row" >
+
+	<div class="col-md-3">
+
+
+	</div>
+	
+	<div class="col-md-6" ng-controller="AllPostsController as post">
+		<div class="row">
+
+			<div class="panel panel-success">
+				
+				<div class="panel-heading">See What Business Owners Are Sharing Here</div>
+				<div class="panel-body" ng-repeat="each in post.posts| reverse">
+					</br>
+					
+					
+					<div class="header">
+                <h1>{{ each.postOwner}}</h1>
+                <h4>Biz Owner</h4>
+                <span>{{ each.postmade }}</span>
+           			</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="col-md-3">
+
+
+	</div>
+
+
+</div>

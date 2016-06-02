@@ -1,0 +1,22 @@
+{
+  "name": "business_reviewer",
+  "version": "1.0.0",
+  "description": "Find the Best In your Town",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "inherits": "^2.0.1",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.4.5",
+    "morgan": "^1.6.1",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Umair Ajmal",
+  "license": "ISC"
+}

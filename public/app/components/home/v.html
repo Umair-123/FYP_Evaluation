@@ -1,0 +1,48 @@
+<!-- Slider -->
+<business-slider></business-slider>
+<!-- / Slider -->
+
+<!-- Find Business -->
+<div id="find-bzns-inp" class="row">
+	<div class="input-group col-md-8 col-md-offset-2">
+      <input type="text" class="form-control" placeholder="type name of business to find">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Find!</button>
+      </span>
+    </div>
+</div>
+<!-- /Find Business -->
+
+<!-- Registration area -->
+<div id="reg-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div>
+					<h2>REGISTER YOUR BUSINESS NOW</h2>
+					<p>Let People Decide Standards</p>
+					<button class="btn btn-reg">REGISTER</button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div>
+					<h2>SHARE YOUR EXPERIENCES</h2>
+					<p>Help People Find The Best</p>
+					<button class="btn btn-reg">SIGN UP</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Registration area -->
+
+<!-- City Selection -->
+<div class="city-select">
+	<select ng-model="hc.city" ng-change="hc.setCity()" ng-options="c as c.name for c in hc.cities track by c.id" class="form-control"></select>
+</div>
+
+<!-- /City Selection -->
+
+<!-- Top Businesses -->
+<bzns-display-panel></bzns-display-panel>
+<!-- /Top Businesses -->

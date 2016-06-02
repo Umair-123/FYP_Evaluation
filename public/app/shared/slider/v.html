@@ -1,0 +1,19 @@
+<div id="bzns-slider">
+  <uib-carousel interval="interval" no-wrap="false">
+    <uib-slide ng-repeat="slide in slides" active="slide.active" index="$index" >
+      <div class="bzns-slide">
+        <div class="container">
+            <img ng-src="{{slide.profileImg}}" class="img-circle bzns-profile">
+            <div class="rev-desc">
+              <img class="stars" src="assets/img/dummy/stars.png">
+              <span>{{ slide.avgRating }}/5 <span>{{ slide.totalReviews | number }} Reviews</span></span>
+              <h3>{{ slide.name }} <span>{{ slide.address }} {{ slide.city }}</span></h3>
+              <p>
+                {{ slide.description }}
+              </p>
+            </div>
+        </div>
+      </div>
+    </uib-slide>
+  </uib-carousel>
+</div>

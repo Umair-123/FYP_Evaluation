@@ -1,0 +1,38 @@
+</br>
+<div class="row" ng-if="main.loggedIn">
+
+	<div class="col-md-3">
+  <a href="/posts"><img src="app/views/assets/img/br3.jpg"></a>
+
+	</div>
+<div class="col-md-6" ng-controller="postController as post">
+		<div class="row">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Write Something on your mind</div>
+
+				<div class="panel-body">
+				<form ng-submit="post.createPost()">
+				<input class="form-control input-lg" type="text" ng-model="post.postData.postmade" placeholder=".....">
+
+				</form>
+				</div>
+			</div>
+
+			<div class="panel panel-success">
+				<div class="panel-heading">Your Posts</div>
+				<div class="panel-body" ng-repeat="each in post.posts | reverse">
+					<p>{{ each.postmade }}</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="col-md-3">
+
+
+	</div>
+
+
+</div>
